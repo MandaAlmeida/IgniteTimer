@@ -1,7 +1,14 @@
-import React from "react";
+import { ThemeProvider } from "styled-components";
 
-function App() {
-  return <h1>Ignite Timer</h1>;
+import { defaultTheme } from "./styles/themes/default";
+import { GlobalStyle } from "./styles/global";
+import { Router } from "./Router";
+
+export function App() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Router />
+      <GlobalStyle />
+    </ThemeProvider>
+  );
 }
-
-export default App;
