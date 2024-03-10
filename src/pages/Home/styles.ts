@@ -57,6 +57,15 @@ export const TaskInput = styled(BaseInput)`
 
 export const MinutesAmountInput = styled(BaseInput)`
   width: 6.4rem;
+  text-align: center;
+
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+    &::after {
+      content: "-";
+    }
+  }
 `;
 
 export const CountdownContainer = styled.section`
@@ -112,4 +121,37 @@ export const StartCountdownButton = styled.button`
   &:not(:disabled):hover {
     background-color: ${(props) => props.theme["green-700"]};
   }
+`;
+
+export const ContainerMinutesAmount = styled.span`
+  position: relative;
+`;
+
+const ButtonMinutesAmount = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: transparent;
+  border: 0;
+
+  width: 1.6rem;
+  height: 1.6rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: ${(props) => props.theme["gray-500"]};
+`;
+
+export const ButtonMinutesAmountLeft = styled(ButtonMinutesAmount)`
+  left: 0;
+`;
+
+export const ButtonMinutesAmountRight = styled(ButtonMinutesAmount)`
+  right: 0;
 `;
