@@ -6,6 +6,7 @@ import { GlobalStyle } from "../../styles/global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "../../styles/themes/default";
 import { lightTheme } from "../../styles/themes/light";
+import { CyclesContextProvider } from "../../context/CyclesContext";
 
 export function DefaultLayout() {
   const [light, setLight] = useState(false);
@@ -20,7 +21,9 @@ export function DefaultLayout() {
     <ThemeProvider theme={theme}>
       <LayoutContainer>
         <Header onTheme={setTheme} light={light} />
-        <Outlet />
+        <CyclesContextProvider>
+          <Outlet />
+        </CyclesContextProvider>
         <GlobalStyle />
       </LayoutContainer>
     </ThemeProvider>
