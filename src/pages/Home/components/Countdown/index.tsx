@@ -39,7 +39,6 @@ export function Countdown() {
           setSeccondsPassed(secondsDifference);
         }
       }, 1000);
-      document.title = `Ignite Timer ${totalMinutesString}:${totalSecondsString}`;
     }
     return () => {
       clearInterval(interval);
@@ -53,6 +52,15 @@ export function Countdown() {
     totalMinutesString,
     totalSecondsString,
   ]);
+
+  useEffect(() => {
+    if (activeCycle) {
+      document.title = `Ignite Timer ${totalMinutesString}:${totalSecondsString}`;
+    }
+    if (!activeCycle) {
+      document.title = `Ignite Timer`;
+    }
+  });
 
   return (
     <CountdownContainer>
