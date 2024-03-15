@@ -10,6 +10,10 @@ export const FormContainer = styled.section`
   font-size: 1.8rem;
   font-weight: 700;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    max-width: 44rem;
+  }
 `;
 
 const BaseInput = styled.input`

@@ -65,6 +65,12 @@ export const HistoryList = styled.section`
       &:last-child {
         padding-right: 2.4rem;
       }
+
+      @media (max-width: 768px) {
+        &:first-child {
+          width: 26rem;
+        }
+      }
     }
   }
 `;

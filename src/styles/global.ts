@@ -28,4 +28,9 @@ body, input, textarea, button {
     font-size: 1.6rem;
 }
 
+@media (max-width: 768px) {
+  :root {
+    font-size: 40%;
+  }
+}
 `;
